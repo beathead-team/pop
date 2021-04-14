@@ -388,7 +388,7 @@ static NSString *animationKey = @"key";
   const CGRect velocityRect = CGRectMake(1000, 1000, 1000, 1000);
 
   POPSpringAnimation *anim = [POPSpringAnimation animation];
-  anim.property = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  anim.property = [POPAnimatableProperty propertyWithName:kLayerBounds];
   anim.fromValue = [NSValue valueWithCGRect:fromRect];
   anim.toValue = [NSValue valueWithCGRect:toRect];
   anim.velocity = [NSValue valueWithCGRect:velocityRect];
@@ -477,7 +477,7 @@ static NSString *animationKey = @"key";
   CGColorRef toColor = POPCGColorRGBACreate(toValues);
 
   POPSpringAnimation *anim = [POPSpringAnimation animation];
-  anim.property = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  anim.property = [POPAnimatableProperty propertyWithName:kLayerBounds];
   anim.fromValue = (__bridge_transfer id)fromColor;
   anim.toValue = (__bridge_transfer id)toColor;
 

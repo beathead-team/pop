@@ -94,8 +94,8 @@ POP_EXTERN_C_BEGIN
  Common CALayer property names.
  */
 extern NSString * const kPOPLayerBackgroundColor;
-extern NSString * const kPOPLayerBounds;
-extern NSString * const kPOPLayerCornerRadius;
+extern NSString * const kLayerBounds;
+extern NSString * const kLayerCornerRadius;
 extern NSString * const kPOPLayerBorderWidth;
 extern NSString * const kPOPLayerBorderColor;
 extern NSString * const kPOPLayerOpacity;
@@ -114,8 +114,8 @@ extern NSString * const kPOPLayerSubtranslationX;
 extern NSString * const kPOPLayerSubtranslationXY;
 extern NSString * const kPOPLayerSubtranslationY;
 extern NSString * const kPOPLayerSubtranslationZ;
-extern NSString * const kPOPLayerTranslationX;
-extern NSString * const kPOPLayerTranslationXY;
+extern NSString * const kLayerTranslationX;
+extern NSString * const kLayerTranslationXY;
 extern NSString * const kPOPLayerTranslationY;
 extern NSString * const kPOPLayerTranslationZ;
 extern NSString * const kPOPLayerZPosition;
@@ -145,13 +145,13 @@ extern NSString * const kPOPLayoutConstraintConstant;
 /**
  Common UIView property names.
  */
-extern NSString * const kPOPViewAlpha;
-extern NSString * const kPOPViewBackgroundColor;
+extern NSString * const kViewAlpha;
+extern NSString * const kViewBackgroundColor;
 extern NSString * const kPOPViewBounds;
 extern NSString * const kPOPViewCenter;
-extern NSString * const kPOPViewFrame;
+extern NSString * const kViewFrame;
 extern NSString * const kPOPViewScaleX;
-extern NSString * const kPOPViewScaleXY;
+extern NSString * const kViewScaleXY;
 extern NSString * const kPOPViewScaleY;
 extern NSString * const kPOPViewSize;
 extern NSString * const kPOPViewTintColor;
@@ -202,11 +202,11 @@ extern NSString * const kPOPLabelTextColor;
 /**
  Common NSView property names.
  */
-extern NSString * const kPOPViewFrame;
+extern NSString * const kViewFrame;
 extern NSString * const kPOPViewBounds;
-extern NSString * const kPOPViewAlphaValue;
-extern NSString * const kPOPViewFrameRotation;
-extern NSString * const kPOPViewFrameCenterRotation;
+extern NSString * const kViewAlphaValue;
+extern NSString * const kViewFrameRotation;
+extern NSString * const kViewFrameCenterRotation;
 extern NSString * const kPOPViewBoundsRotation;
 
 /**

@@ -395,7 +395,7 @@ static const CGFloat epsilon = 0.0001f;
   const CGRect fromRect = CGRectMake(0, 0, 0, 0);
 
   POPDecayAnimation *anim = [POPDecayAnimation animation];
-  anim.property = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  anim.property = [POPAnimatableProperty propertyWithName:kLayerBounds];
   anim.fromValue = [NSValue valueWithCGRect:fromRect];
   anim.velocity = [NSValue valueWithCGRect:CGRectMake(100, 100, 1000, 1000)];
   

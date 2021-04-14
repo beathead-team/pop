@@ -47,7 +47,7 @@ static void assertPropertyEqual(id self, POPAnimatableProperty *prop1, POPAnimat
                      kPOPLayerShadowOffset,
                      kPOPLayerShadowOpacity,
                      kPOPLayerShadowRadius,
-                     kPOPLayerCornerRadius,
+                     kLayerCornerRadius,
                      kPOPLayerBorderWidth,
                      kPOPLayerBorderColor,
                      kPOPShapeLayerStrokeStart,
@@ -56,10 +56,10 @@ static void assertPropertyEqual(id self, POPAnimatableProperty *prop1, POPAnimat
                      kPOPShapeLayerLineWidth,
                      kPOPShapeLayerLineDashPhase,
 #if TARGET_OS_IPHONE
-                     kPOPViewAlpha,
-                     kPOPViewBackgroundColor,
+                     kViewAlpha,
+                     kViewBackgroundColor,
                      kPOPViewCenter,
-                     kPOPViewFrame,
+                     kViewFrame,
                      kPOPViewBounds,
                      kPOPViewSize,
                      kPOPViewTintColor,
@@ -70,11 +70,11 @@ static void assertPropertyEqual(id self, POPAnimatableProperty *prop1, POPAnimat
                      kPOPCollectionViewContentSize,
                      kPOPLabelTextColor
 #else
-                     kPOPViewFrame,
+                     kViewFrame,
                      kPOPViewBounds,
-                     kPOPViewAlphaValue,
-                     kPOPViewFrameRotation,
-                     kPOPViewFrameCenterRotation,
+                     kViewAlphaValue,
+                     kViewFrameRotation,
+                     kViewFrameCenterRotation,
                      kPOPViewBoundsRotation,
                      kPOPWindowFrame,
                      kPOPWindowAlphaValue,
@@ -118,7 +118,7 @@ static void assertPropertyEqual(id self, POPAnimatableProperty *prop1, POPAnimat
 - (void)testCopying
 {
   // instance
-  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kLayerBounds];
 
   // instance copy
   POPAnimatableProperty *propCopy = [prop copy];
@@ -130,7 +130,7 @@ static void assertPropertyEqual(id self, POPAnimatableProperty *prop1, POPAnimat
 - (void)testMutableCopying
 {
   // instance
-  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kLayerBounds];
 
   // instance copy
   POPAnimatableProperty *propCopy = [prop mutableCopy];

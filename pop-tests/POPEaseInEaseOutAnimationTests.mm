@@ -56,7 +56,7 @@
   const CGRect toRect = CGRectMake(100, 200, 200, 400);
 
   POPBasicAnimation *anim = [POPBasicAnimation easeInEaseOutAnimation];
-  anim.property = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  anim.property = [POPAnimatableProperty propertyWithName:kLayerBounds];
   anim.fromValue = [NSValue valueWithCGRect:fromRect];
   anim.toValue = [NSValue valueWithCGRect:toRect];
   

@@ -48,8 +48,8 @@ using namespace POP;
 
 - (void)testWithPropertyNamedConstruction
 {
-  POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerBounds];
-  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kPOPLayerBounds];
+  POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kLayerBounds];
+  POPAnimatableProperty *prop = [POPAnimatableProperty propertyWithName:kLayerBounds];
   XCTAssertTrue(anim.property == prop, @"expected:%@ actual:%@", prop, anim.property);
 }
 

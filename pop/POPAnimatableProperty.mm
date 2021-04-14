@@ -28,8 +28,8 @@ static CGFloat const kPOPThresholdRadius = 0.01;
 
 // CALayer
 NSString * const kPOPLayerBackgroundColor = @"backgroundColor";
-NSString * const kPOPLayerBounds = @"bounds";
-NSString * const kPOPLayerCornerRadius = @"cornerRadius";
+NSString * const kLayerBounds = @"bounds";
+NSString * const kLayerCornerRadius = @"cornerRadius";
 NSString * const kPOPLayerBorderWidth = @"borderWidth";
 NSString * const kPOPLayerBorderColor = @"borderColor";
 NSString * const kPOPLayerOpacity = @"opacity";
@@ -48,8 +48,8 @@ NSString * const kPOPLayerSubtranslationX = @"subtranslationX";
 NSString * const kPOPLayerSubtranslationXY = @"subtranslationXY";
 NSString * const kPOPLayerSubtranslationY = @"subtranslationY";
 NSString * const kPOPLayerSubtranslationZ = @"subtranslationZ";
-NSString * const kPOPLayerTranslationX = @"translationX";
-NSString * const kPOPLayerTranslationXY = @"translationXY";
+NSString * const kLayerTranslationX = @"translationX";
+NSString * const kLayerTranslationXY = @"translationXY";
 NSString * const kPOPLayerTranslationY = @"translationY";
 NSString * const kPOPLayerTranslationZ = @"translationZ";
 NSString * const kPOPLayerZPosition = @"zPosition";
@@ -72,13 +72,13 @@ NSString * const kPOPLayoutConstraintConstant = @"layoutConstraint.constant";
 #if TARGET_OS_IPHONE
 
 // UIView
-NSString * const kPOPViewAlpha = @"view.alpha";
-NSString * const kPOPViewBackgroundColor = @"view.backgroundColor";
-NSString * const kPOPViewBounds = kPOPLayerBounds;
+NSString * const kViewAlpha = @"view.alpha";
+NSString * const kViewBackgroundColor = @"view.backgroundColor";
+NSString * const kPOPViewBounds = kLayerBounds;
 NSString * const kPOPViewCenter = @"view.center";
-NSString * const kPOPViewFrame = @"view.frame";
+NSString * const kViewFrame = @"view.frame";
 NSString * const kPOPViewScaleX = @"view.scaleX";
-NSString * const kPOPViewScaleXY = @"view.scaleXY";
+NSString * const kViewScaleXY = @"view.scaleXY";
 NSString * const kPOPViewScaleY = @"view.scaleY";
 NSString * const kPOPViewSize = kPOPLayerSize;
 NSString * const kPOPViewTintColor = @"view.tintColor";
@@ -113,11 +113,11 @@ NSString * const kPOPLabelTextColor = @"label.textColor";
 #else
 
 // NSView
-NSString * const kPOPViewFrame = @"view.frame";
+NSString * const kViewFrame = @"view.frame";
 NSString * const kPOPViewBounds = @"view.bounds";
-NSString * const kPOPViewAlphaValue = @"view.alphaValue";
-NSString * const kPOPViewFrameRotation = @"view.frameRotation";
-NSString * const kPOPViewFrameCenterRotation = @"view.frameCenterRotation";
+NSString * const kViewAlphaValue = @"view.alphaValue";
+NSString * const kViewFrameRotation = @"view.frameRotation";
+NSString * const kViewFrameCenterRotation = @"view.frameCenterRotation";
 NSString * const kPOPViewBoundsRotation = @"view.boundsRotation";
 
 // NSWindow
@@ -190,7 +190,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdColor
   },
 
-  {kPOPLayerBounds,
+  {kLayerBounds,
     ^(CALayer *obj, CGFloat values[]) {
       values_from_rect(values, [obj bounds]);
     },
@@ -200,7 +200,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdPoint
   },
 
-  {kPOPLayerCornerRadius,
+  {kLayerCornerRadius,
     ^(CALayer *obj, CGFloat values[]) {
       values[0] = [obj cornerRadius];
     },
@@ -316,7 +316,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdScale
   },
 
-  {kPOPLayerTranslationX,
+  {kLayerTranslationX,
     ^(CALayer *obj, CGFloat values[]) {
       values[0] = POPLayerGetTranslationX(obj);
     },
@@ -346,7 +346,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdPoint
   },
 
-  {kPOPLayerTranslationXY,
+  {kLayerTranslationXY,
     ^(CALayer *obj, CGFloat values[]) {
       values_from_point(values, POPLayerGetTranslationXY(obj));
     },
@@ -575,7 +575,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
 
   /* UIView */
 
-  {kPOPViewAlpha,
+  {kViewAlpha,
     ^(UIView *obj, CGFloat values[]) {
       values[0] = obj.alpha;
     },
@@ -585,7 +585,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdOpacity
   },
 
-  {kPOPViewBackgroundColor,
+  {kViewBackgroundColor,
     ^(UIView *obj, CGFloat values[]) {
       POPUIColorGetRGBAComponents(obj.backgroundColor, values);
     },
@@ -605,7 +605,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdPoint
   },
 
-  {kPOPViewFrame,
+  {kViewFrame,
     ^(UIView *obj, CGFloat values[]) {
       values_from_rect(values, obj.frame);
     },
@@ -635,7 +635,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdScale
   },
 
-  {kPOPViewScaleXY,
+  {kViewScaleXY,
     ^(UIView *obj, CGFloat values[]) {
       values_from_point(values, POPLayerGetScaleXY(obj.layer));
     },
@@ -741,7 +741,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
 
   /* NSView */
 
-  {kPOPViewFrame,
+  {kViewFrame,
     ^(NSView *obj, CGFloat values[]) {
       values_from_rect(values, NSRectToCGRect(obj.frame));
     },
@@ -761,7 +761,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdPoint
   },
 
-  {kPOPViewAlphaValue,
+  {kViewAlphaValue,
     ^(NSView *obj, CGFloat values[]) {
       values[0] = obj.alphaValue;
     },
@@ -771,7 +771,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdOpacity
   },
 
-  {kPOPViewFrameRotation,
+  {kViewFrameRotation,
     ^(NSView *obj, CGFloat values[]) {
       values[0] = obj.frameRotation;
     },
@@ -781,7 +781,7 @@ static POPStaticAnimatablePropertyState _staticStates[] =
     kPOPThresholdRotation
   },
 
-  {kPOPViewFrameCenterRotation,
+  {kViewFrameCenterRotation,
     ^(NSView *obj, CGFloat values[]) {
       values[0] = obj.frameCenterRotation;
     },
